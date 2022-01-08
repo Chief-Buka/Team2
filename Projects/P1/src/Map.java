@@ -59,8 +59,13 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		return null;
+		HashSet<Type> res = new HashSet<>();
+		for (Location l : field.keySet()) {
+			if (l.x == loc.x && l.y == loc.y) {
+				res.addAll(field.get(l));
+			}
+		return res;
+
 	}
 
 	public boolean attack(String Name) {
