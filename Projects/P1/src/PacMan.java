@@ -26,7 +26,15 @@ public class PacMan{
 		return false;
 	}
 
+	/*This method checks to see if there is a 'power-cookie' located in Pacman's current  coordinate.
+	If there is, this method calls the eatCookie method from the Map Class, 
+	and returns the cookie component if the cookie a consumed, and null otherwise. */
 	public JComponent consume() { 
- 		return null;
+		if (myMap.getLoc(myLoc) == Map.Type.COOKIE) { //Map.getLoc should return type "Type" and not "HashSet<Type>"?
+			JComponent cookie = myMap.eatCookie("pacman");
+			return cookie;
+		} else {
+			return null;
+		}
 	}
 }
