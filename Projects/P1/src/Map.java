@@ -64,6 +64,7 @@ public class Map{
 			if (l.x == loc.x && l.y == loc.y) {
 				res.addAll(field.get(l));
 			}
+		}
 		return res;
 
 	}
