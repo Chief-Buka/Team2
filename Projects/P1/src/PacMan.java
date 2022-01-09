@@ -15,7 +15,7 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;	
+		return new ArrayList<Location>;	
 	}
 
 	public boolean move() {
