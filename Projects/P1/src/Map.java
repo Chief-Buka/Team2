@@ -71,11 +71,10 @@ public class Map{
 	/* The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns 
 	the Cookie component that has been eaten, otherwise it returns null.*/
 	public JComponent eatCookie(String name) {
-		
-
 		//see if there's a cookie at pacman's location 
 		Location pacman_loc = locations.get("pacman");
 		HashSet<Type> loc = getLoc(pacman_loc);
+		
 		if (loc.contains(Type.COOKIE)) {
 			//update locations, components, field, and cookies
 			
