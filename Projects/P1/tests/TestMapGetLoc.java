@@ -5,6 +5,7 @@ import java.io.*;
 
 public class TestMapGetLoc {
 	
+	@Test
 	public void testMapGetLoc() {
 		NoFrame frame = new NoFrame();
 		PacMan pacman = frame.addPacMan(new Location(5, 5));
