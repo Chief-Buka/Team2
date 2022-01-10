@@ -24,7 +24,7 @@ public class Ghost{
 		return false;
 	}
 
-	//returns true if an attack on pacman is successfull and false if not
+	//returns true if an attack on pacman is successful and false if not
 	public boolean attack() {
 		//if pacman is in range, then an attack would be successful
 		if (this.is_pacman_in_range() == true) {
