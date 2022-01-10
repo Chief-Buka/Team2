@@ -63,9 +63,22 @@ public class Map{
 		return null;
 	}
 
-	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+	public boolean attack(String name) {
+		Location pacl = locations.get("pacman");
+		JComponent gc = components.get(name);
+		Location gl = locations.get(name);
+		HashSet<Type> ghost = new HashSet<Type>();
+		ghost.add(Type.GHOST);
+
+ 		locations.put(name,pacl);
+ 		components.put(name,gc);
+ 		field.put(pacl,ghost);
+
+ 		locations.remove("pacman");
+ 		components.remove("pacman");
+ 		field.remove(pacl);
+
+		return true;
 	}
 	
 	public JComponent eatCookie(String name) {
