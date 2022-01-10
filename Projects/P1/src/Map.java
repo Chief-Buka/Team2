@@ -69,9 +69,24 @@ public class Map{
 
 	}
 
-	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+	public boolean attack(String name) {
+		Location pacl = locations.get("pacman");
+		JComponent gc = components.get(name);
+		HashSet<Type> ghost = new HashSet<Type>();
+		ghost.add(Type.GHOST);
+		gc.setLocation(pacl.x, pacl.y);
+		
+ 		locations.put(name,pacl);
+ 		components.put(name,gc);
+ 		field.put(pacl,ghost);
+
+ 		locations.remove("pacman");
+ 		components.remove("pacman");
+ 		field.remove(pacl);
+
+ 		gameOver = true;
+
+		return true;
 	}
 
 	/* The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns 
