@@ -66,7 +66,6 @@ public class Map{
 	public boolean attack(String name) {
 		Location pacl = locations.get("pacman");
 		JComponent gc = components.get(name);
-		Location gl = locations.get(name);
 		HashSet<Type> ghost = new HashSet<Type>();
 		ghost.add(Type.GHOST);
 
@@ -77,6 +76,8 @@ public class Map{
  		locations.remove("pacman");
  		components.remove("pacman");
  		field.remove(pacl);
+
+ 		gameOver = true;
 
 		return true;
 	}
