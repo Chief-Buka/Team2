@@ -14,13 +14,17 @@
 A list of the functions you wrote with a description of the implementation for each function a description of the test you wrote. The descriptions don't have to be long - a sentence or two would suffice.
 
 ### Pacman - get_valid_moves()
+### Pacman - move()
+For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the pacman to the first location in the arraylist and returns true. 
 ### Pacman - is_ghost_in_range()
 ### Pacman - consume()
 ### Ghost - move()
+For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the ghost to the first location in the arraylist and returns true. 
 ### Ghost - is_pacman_in_range()
 ### Ghost - attack()
 ### Map - move()
-### Map - getLoc()
+### Map - getLoc(Location loc)
+The getLoc function takes in a location and returns a hashset of Type enums that are in that location. To implement it, I initialized a hashset of Type enums to later return. Then I loop through the keys of the fields hashmap, which are locations, and if the location pointer is the same as the parameter location, it is added to the return hashset.
 ### Map - attack()
 ### Map - eatCookie()
 
