@@ -112,8 +112,8 @@ public class Map{
 		if (loc.contains(Type.COOKIE)) {
 			//update locations, components, field, and cookies
 			
-			//decrement cookies
-			cookies -= 1;
+			//increment cookies
+			cookies += 1;
 
 			//remove cookie from locations
 			String location_string = "tok_x"+ pacman_loc.x + "_y"+ pacman_loc.y;
