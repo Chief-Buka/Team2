@@ -68,7 +68,8 @@ public class Map{
 		JComponent gc = components.get(name);
 		HashSet<Type> ghost = new HashSet<Type>();
 		ghost.add(Type.GHOST);
-
+		gc.setLocation(pacl.x, pacl.y);
+		
  		locations.put(name,pacl);
  		components.put(name,gc);
  		field.put(pacl,ghost);
