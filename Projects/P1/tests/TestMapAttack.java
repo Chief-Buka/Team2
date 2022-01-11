@@ -20,9 +20,9 @@ public class TestMapAttack extends TestCase {
 		
 
 		//Start The Game
-		while(true) {
+		//while(true) {
 			frame.startGame();
-		}
+		//}
 
 	}
 }
