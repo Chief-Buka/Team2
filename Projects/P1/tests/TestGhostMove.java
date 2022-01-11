@@ -9,8 +9,7 @@ public class TestGhostMove extends TestCase {
 	@Test
 	public void testGhostMove() throws FileNotFoundException{
 		NoFrame frame = new NoFrame();
-		// Map m = new Map(20);
-		Ghost ghost = frame.addGhost(new Location(9, 11), "NewGhost", Color.red);
+		Ghost ghost = frame.addGhost(new Location(5, 5), "name", Color.red);
 		assertEquals(true, ghost.move());
 	}
 }
