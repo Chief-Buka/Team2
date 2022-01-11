@@ -57,6 +57,7 @@ public class Ghost{
 		else {
 			this.myLoc.x = moves.get(0).x;
 			this.myLoc.y = moves.get(0).y;
+			myMap.move(myName, moves.get(0), Map.Type.GHOST);
 			return true;
 		}
 	}

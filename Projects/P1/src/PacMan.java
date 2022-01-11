@@ -58,9 +58,9 @@ public class PacMan{
 			return false;
 		}
 		else {
-			//this.myLoc = new Location(moves.get(0).x, moves.get(0).y);
 			this.myLoc.x = moves.get(0).x;
 			this.myLoc.y = moves.get(0).y;
+			myMap.move(myName, moves.get(0), Map.Type.PACMAN);
 			return true;
 		}
 	}

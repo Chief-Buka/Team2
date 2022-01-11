@@ -73,7 +73,6 @@ public class Map{
 	
 	public HashSet<Type> getLoc(Location loc) {
 		return field.get(loc);
-	
 	}
 
 	public boolean attack(String name) {
