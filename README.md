@@ -30,6 +30,7 @@ Returns an ArrayList\<Location\> containing all valid moves for the Ghost in the
 ### Ghost - move()
 For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the ghost to the first location in the arraylist and returns true. 
 ### Ghost - is_pacman_in_range()
+This function check if pacman is in a one block radius using get location from map. If pacman is it returns true!
 ### Ghost - attack()
 ### Map - move()
 Moves a given component (Ghost or PacMan) to the given Location and updates the Map's data. This does not change the local Location values for the component, but updates each field related to their position on the board, as well as the components.
