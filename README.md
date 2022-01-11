@@ -12,6 +12,7 @@
 ''' 
 CMSC388T/Team2/Projects/P1$ javac -cp "src/" src/*.java 
 CMSC388T/Team2/Projects/P1$ java -cp "src/" StartMenu
+
 '''
 
 ## Functions
