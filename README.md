@@ -15,7 +15,6 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 ## Functions
-A list of the functions you wrote with a description of the implementation for each function a description of the test you wrote. The descriptions don't have to be long - a sentence or two would suffice.
 
 ### Pacman - get_valid_moves()
 Returns an ArrayList\<Location\> containing all valid moves for PacMan in the current position. This is implemented simply by checking each surrounding square and adding it to the returned list if its type is not Type.WALL.
