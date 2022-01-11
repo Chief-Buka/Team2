@@ -14,7 +14,7 @@
 A list of the functions you wrote with a description of the implementation for each function a description of the test you wrote. The descriptions don't have to be long - a sentence or two would suffice.
 
 ### Pacman - get_valid_moves()
-Returns an ArrayList<Location> containing all valid moves for PacMan in the current position. This is implemented simply by checking each surrounding square and adding it to the returned list if its type is not Type.WALL.
+Returns an ArrayList\<Location\> containing all valid moves for PacMan in the current position. This is implemented simply by checking each surrounding square and adding it to the returned list if its type is not Type.WALL.
 ### Pacman - move()
 For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the pacman to the first location in the arraylist and returns true. 
 ### Pacman - is_ghost_in_range()
