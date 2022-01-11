@@ -13,7 +13,6 @@ Run these commands in the P1 directory to run the game!
 ```
 javac -cp "src/" src/*.java 
 java -cp "src/" StartMenu
-
 ```
 ## Functions
 A list of the functions you wrote with a description of the implementation for each function a description of the test you wrote. The descriptions don't have to be long - a sentence or two would suffice.
