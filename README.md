@@ -6,14 +6,13 @@
 - Mike Brown
 - Ethan Shifflett
 
-## An image of your code playing PacMan
+## Image of Display
 ![Game](PlayPac.PNG)
-## A section on how to run the code from the command line - include a code block
-Run these command to get our code to run
+## How to Run
+Run these commands in the P1 directory to run the game!
 ```
-CMSC388T/Team2/Projects/P1$ javac -cp "src/" src/*.java 
-CMSC388T/Team2/Projects/P1$ java -cp "src/" StartMenu
-
+javac -cp "src/" src/*.java 
+java -cp "src/" StartMenu
 ```
 ## Functions
 A list of the functions you wrote with a description of the implementation for each function a description of the test you wrote. The descriptions don't have to be long - a sentence or two would suffice.
