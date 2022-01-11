@@ -7,7 +7,7 @@
 - Ethan Shifflett
 
 ## An image of your code playing PacMan
-![Game](PlayPac.png)
+![Game](https://raw.githubusercontent.com/cmsc388T-winter22/Team2/main/PlayPac.PNG?token=GHSAT0AAAAAABQGPFSOQZPRRYC6J3DGQBRYYO425QA)
 ## A section on how to run the code from the command line - include a code block
 
 ## Functions
