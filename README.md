@@ -23,6 +23,7 @@ Returns an ArrayList\<Location\> containing all valid moves for PacMan in the cu
 ### Pacman - move()
 For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the pacman to the first location in the arraylist and returns true. 
 ### Pacman - is_ghost_in_range()
+This function checks a 1 block area around pacman using get location from map. If there is a ghost it returns true
 ### Pacman - consume()
 ### Ghost - get_valid_moves()
 Returns an ArrayList\<Location\> containing all valid moves for the Ghost in the current position. This is implemented simply by checking each surrounding square and adding it to the returned list if its type is not Type.WALL.
@@ -35,6 +36,7 @@ Moves a given component (Ghost or PacMan) to the given Location and updates the 
 ### Map - getLoc(Location loc)
 The getLoc function takes in a location and returns a hashset of Type enums that are in that location. To implement it, I initialized a hashset of Type enums to later return. Then I loop through the keys of the fields hashmap, which are locations, and if the location pointer is the same as the parameter location, it is added to the return hashset.
 ### Map - attack()
+If ghost calls this function upon a successfull attack it will update the map and end the game. 
 ### Map - eatCookie()
 
 
