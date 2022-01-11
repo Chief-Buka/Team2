@@ -7,7 +7,7 @@
 - Ethan Shifflett
 
 ## An image of your code playing PacMan
-
+![Game](PlayPac.png)
 ## A section on how to run the code from the command line - include a code block
 
 ## Functions
