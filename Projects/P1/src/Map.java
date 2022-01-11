@@ -72,13 +72,7 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> res = new HashSet<>();
-		for (Location l : field.keySet()) {
-			if (l.x == loc.x && l.y == loc.y) {
-				res.addAll(field.get(l));
-			}
-		}
-		return res;
+		return field.get(loc);
 
 	}
 
