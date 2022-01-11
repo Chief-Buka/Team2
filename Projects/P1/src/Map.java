@@ -72,14 +72,8 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> res = new HashSet<>();
-		for (Location l : field.keySet()) {
-			if (l.x == loc.x && l.y == loc.y) {
-				res.addAll(field.get(l));
-			}
-		}
-		return res;
-
+		return field.get(loc);
+	
 	}
 
 	public boolean attack(String name) {
@@ -123,6 +117,7 @@ public class Map{
 			JComponent cookie_to_return = components.get(location_string);
 
 			//remove the cookie from components set
+			
 			components.remove(location_string);
 
 			//remove cookie from field set
