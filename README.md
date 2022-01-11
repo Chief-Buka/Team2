@@ -19,6 +19,8 @@ Returns an ArrayList\<Location\> containing all valid moves for PacMan in the cu
 For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the pacman to the first location in the arraylist and returns true. 
 ### Pacman - is_ghost_in_range()
 ### Pacman - consume()
+### Ghost - get_valid_moves()
+Returns an ArrayList\<Location\> containing all valid moves for the Ghost in the current position. This is implemented simply by checking each surrounding square and adding it to the returned list if its type is not Type.WALL.
 ### Ghost - move()
 For this function I call get_valid_moves to get an ArrayList of the possible moves. Then if the resulting list is empty, the function returns false. Otherwise, it updates the location of the ghost to the first location in the arraylist and returns true. 
 ### Ghost - is_pacman_in_range()
