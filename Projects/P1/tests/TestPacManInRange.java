@@ -17,10 +17,10 @@ public class TestPacManInRange extends TestCase {
 		//frame.initPlayers(); //Creates all of the players
 		assertEquals(true, ghost.is_pacman_in_range());
 		//Start The Game
-		while(true) {
+		//while(true) {
 		frame.startGame();
 
-		}
+		//}
 	}
 }
 
