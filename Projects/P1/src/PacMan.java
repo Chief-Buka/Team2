@@ -52,15 +52,13 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location> moves = this.get_valid_moves();
-		System.out.println(moves.size());
-		if (moves.isEmpty()) {
+		if (this.get_valid_moves().size() < 1) {
 			return false;
 		}
 		else {
-			this.myLoc.x = moves.get(0).x;
-			this.myLoc.y = moves.get(0).y;
-			myMap.move(myName, moves.get(0), Map.Type.PACMAN);
+			this.myLoc.x = this.get_valid_moves().get(0).x;
+			this.myLoc.y = this.get_valid_moves().get(0).y;
+			myMap.move(myName, this.get_valid_moves().get(0), Map.Type.PACMAN);
 			return true;
 		}
 	}
