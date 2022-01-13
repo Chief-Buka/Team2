@@ -51,13 +51,13 @@ public class Ghost{
 
 	public boolean move() {
 		if (this.get_valid_moves().size() < 1) {
-			return false;
+			return true;
 		}
 		else {
 			this.myLoc.x = this.get_valid_moves().get(0).x;
 			this.myLoc.y = this.get_valid_moves().get(0).y;
 			myMap.move(myName, this.get_valid_moves().get(0), Map.Type.GHOST);
-			return true;
+			return false;
 		}
 	}
 	public boolean is_pacman_in_range() { 
