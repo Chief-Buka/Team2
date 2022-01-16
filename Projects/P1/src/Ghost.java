@@ -26,7 +26,7 @@ public class Ghost{
 		}
 
 		/* Down */ 
-		curr = myLoc.shift(0, -1); // sets curr
+		curr = myLoc.shift(0, 1); // sets curr
 		inhabitants = myMap.getLoc(curr); // retrieves Types on Location
 		if(!(inhabitants.contains(Map.Type.WALL))){ // Checks if there's a wall
 			toReturn.add(curr); // Adds to toReturn if no wall
@@ -51,26 +51,26 @@ public class Ghost{
 
 	public boolean move() {
 		if (this.get_valid_moves().size() < 1) {
-			return false;
+			return true;
 		}
 		else {
 			this.myLoc.x = this.get_valid_moves().get(0).x;
 			this.myLoc.y = this.get_valid_moves().get(0).y;
 			myMap.move(myName, this.get_valid_moves().get(0), Map.Type.GHOST);
-			return true;
+			return false;
 		}
 	}
 	public boolean is_pacman_in_range() { 
-		if(myMap.getLoc(new Location(myLoc.x, myLoc.y+1)).contains(Map.Type.PACMAN)){
+		if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y+1)).contains(Map.Type.PACMAN)){
 			return true;
 
-		}else if(myMap.getLoc(new Location(myLoc.x, myLoc.y-1)).contains(Map.Type.PACMAN)){
+		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y-1)).contains(Map.Type.PACMAN)){
 
 			return true;
-		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.PACMAN)){
+		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y-1)).contains(Map.Type.PACMAN)){
 
 			return true;
-		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.PACMAN)){
+		}else if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y+1)).contains(Map.Type.PACMAN)){
 
 			return true;
 		}
@@ -82,7 +82,7 @@ public class Ghost{
 	public boolean attack() {
 		//if pacman is in range, then an attack would be successful
 		if (this.is_pacman_in_range() == true) {
-			return true;
+			return false;
 		} else {
 			return false;
 		}
