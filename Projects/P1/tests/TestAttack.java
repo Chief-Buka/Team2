@@ -2,11 +2,13 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
+import org.omg.CosNaming.NamingContextPackage.NotFound;
+
 public class TestAttack extends TestCase {
 
 	public void testAttack() throws FileNotFoundException {
 		//Creating A Map
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 		//NoFrame frame1 = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		//Creating Players
