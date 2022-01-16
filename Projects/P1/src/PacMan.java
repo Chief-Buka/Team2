@@ -68,20 +68,20 @@ public class PacMan{
 	public boolean is_ghost_in_range() { 
 
 		if(myMap.getLoc(new Location(myLoc.x, myLoc.y+1)).contains(Map.Type.GHOST)){
-			return true;
+			return false;
 
 		}else if(myMap.getLoc(new Location(myLoc.x, myLoc.y-1)).contains(Map.Type.GHOST)){
 
-			return true;
+			return false;
 		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.GHOST)){
 
-			return true;
-		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.GHOST)){
+			return false;
+		}else if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y)).contains(Map.Type.GHOST)){
 
-			return true;
+			return false;
 		}
 
-		return false;
+		return true;
 	}
 
 	/*This method checks to see if there is a 'power-cookie' located in Pacman's current  coordinate.
