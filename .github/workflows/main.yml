@@ -1,0 +1,165 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+        - uses: actions/checkout@v2
+        - name: Build Project
+          run: javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+    
+    # PacMan Tests
+    
+    TestPacManValidMoves:
+     # The type of runner that the job will run on
+     runs-on: ubuntu-latest
+     container: openjdk
+     steps:
+      - uses: actions/checkout@v2
+      - name: Test PacMan ValidMoves
+        run: |
+           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManValidMoves.java
+           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+           
+  TestPacManMove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test PacMan Move
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManMove.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+            
+  TestPacManInRange:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Ghost Move
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManInRange.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+   
+   TestConsume:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Consume
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+   
+   # Ghost Tests
+   
+   TestGhostValidMoves:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Ghost ValidMoves
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+            
+  TestGhostMove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Ghost Move
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostMove.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+            
+  TestGhostInRange:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test PacMan Move
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostInRange.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+              
+  TestAttack:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Attack
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestAttack.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+
+  # Map Tests
+  
+  TestMapGetLoc:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Map GetLoc
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+
+  TestMapAttack:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Map GetLoc
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapAttack.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+   
+  TestMapMove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+       - uses: actions/checkout@v2
+       - name: Test Map Move
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapMove.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+       
+  TestMapEatCookie:
+       # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+       - uses: actions/checkout@v2
+       - name: Test Map EatCookie
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapEatCookie.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+
+ 
+
