@@ -30,7 +30,7 @@ public class PacMan{
 		}
 
 		/* Down */ 
-		curr = myLoc.shift(0, -1); // sets curr
+		curr = myLoc.shift(0, 1); // sets curr
 		inhabitants = myMap.getLoc(curr); // retrieves Types on Location
 		if(!(inhabitants.contains(Map.Type.WALL))){ // Checks if there's a wall
 			toReturn.add(curr); // Adds to toReturn if no wall
