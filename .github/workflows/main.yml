@@ -15,10 +15,7 @@ jobs:
         - name: Build Project
           run: javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
     
-    # PacMan Tests
-    
     TestPacManValidMoves:
-     # The type of runner that the job will run on
      runs-on: ubuntu-latest
      container: openjdk
      steps:
@@ -29,7 +26,6 @@ jobs:
            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
            
   TestPacManMove:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -40,7 +36,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
             
   TestPacManInRange:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -51,7 +46,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
    
    TestConsume:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -61,10 +55,7 @@ jobs:
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
    
-   # Ghost Tests
-   
    TestGhostValidMoves:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -75,7 +66,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
             
   TestGhostMove:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -96,7 +86,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
               
   TestAttack:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -105,11 +94,8 @@ jobs:
           run: |
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestAttack.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
-
-  # Map Tests
   
   TestMapGetLoc:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -120,7 +106,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
 
   TestMapAttack:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -131,7 +116,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
    
   TestMapMove:
-      # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -142,7 +126,6 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
        
   TestMapEatCookie:
-       # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
