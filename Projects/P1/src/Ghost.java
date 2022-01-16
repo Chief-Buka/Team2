@@ -82,7 +82,7 @@ public class Ghost{
 	public boolean attack() {
 		//if pacman is in range, then an attack would be successful
 		if (this.is_pacman_in_range() == true) {
-			return true;
+			return false;
 		} else {
 			return false;
 		}

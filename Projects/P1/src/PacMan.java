@@ -1,5 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.management.monitor.GaugeMonitor;
 import javax.swing.JComponent;
 
 public class PacMan{
@@ -92,8 +94,10 @@ public class PacMan{
 		if (map_location.contains(Map.Type.COOKIE)) {
 			JComponent cookie = myMap.eatCookie("pacman");
 			return cookie;
+		//if not, return null
 		} else {
-			return null;
+			JComponent myLabel = new JLabel();
+			return myLabel;
 		}
 	}
 }
