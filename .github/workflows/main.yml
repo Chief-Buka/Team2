@@ -53,8 +53,9 @@ jobs:
           run: |
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+
   TestPacManValidMoves:
-      # The type of runner that the job will run on
+     # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -63,6 +64,19 @@ jobs:
           run: |
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManValidMoves.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+            
+  TestAttack:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: Test Attack
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestAttack.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+
+        
   TestGhostValidMoves:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
@@ -73,14 +87,40 @@ jobs:
           run: |
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
-  TestMapMove:
+        
+  TestConsume:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
       container: openjdk
       steps:
         - uses: actions/checkout@v2
-        - name: Test Map Move
+        - name: Test Consume
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+
+       
+  TestMapMove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+       - uses: actions/checkout@v2
+       - name: Test Map Move
           run: |
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapMove.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
-            
+       
+  TestMapEatCookie:
+       # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+       - uses: actions/checkout@v2
+       - name: Test Map EatCookie
+          run: |
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapEatCookie.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+
+ 
+
