@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 
 public class Map{
 
@@ -126,7 +127,8 @@ public class Map{
 
 		//if there's no cookie at the specified location, return null
 		} else {
-			return null;
+			JComponent mylabel = new JLabel();
+			return mylabel;
 		}
 		//locations: String, Location
 		//components: String, JComponent
