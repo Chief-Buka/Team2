@@ -127,8 +127,7 @@ public class Map{
 
 		//if there's no cookie at the specified location, return null
 		} else {
-			JComponent mylabel = new JLabel();
-			return mylabel;
+			return null;
 		}
 		//locations: String, Location
 		//components: String, JComponent
