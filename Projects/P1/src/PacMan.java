@@ -96,8 +96,7 @@ public class PacMan{
 			return cookie;
 		//if not, return null
 		} else {
-			JComponent myLabel = new JLabel();
-			return myLabel;
+			return null;
 		}
 	}
 }
