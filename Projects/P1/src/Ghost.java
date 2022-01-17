@@ -61,16 +61,16 @@ public class Ghost{
 		return false;
 	}
 	public boolean is_pacman_in_range() { 
-		if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y+1)).contains(Map.Type.PACMAN)){
+		if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y)).contains(Map.Type.PACMAN)){
 			return true;
 
-		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y-1)).contains(Map.Type.PACMAN)){
+		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.PACMAN)){
 
 			return true;
-		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y-1)).contains(Map.Type.PACMAN)){
+		}else if(myMap.getLoc(new Location(myLoc.x, myLoc.y-1)).contains(Map.Type.PACMAN)){
 
 			return true;
-		}else if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y+1)).contains(Map.Type.PACMAN)){
+		}else if(myMap.getLoc(new Location(myLoc.x, myLoc.y+1)).contains(Map.Type.PACMAN)){
 
 			return true;
 		}
@@ -82,7 +82,7 @@ public class Ghost{
 	public boolean attack() {
 		//if pacman is in range, then an attack would be successful
 		if (this.is_pacman_in_range() == true) {
-			return false;
+			return true;
 		} else {
 			return false;
 		}

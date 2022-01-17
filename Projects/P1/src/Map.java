@@ -93,7 +93,7 @@ public class Map{
 
  		gameOver = true;
 
-		return false;
+		return gameOver;
 	}
 
 	/* The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns 
