@@ -56,9 +56,9 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-		Location currLoc = locations.get(name); // getting CURRENT LOCATION IN FIELD
-
-		field.get(loc).remove(type); // removing Type from CURRENT LOCATION IN FIELD
+		JComponent addComp;
+		Location currLoc = locations.get(name); // getting current location
+		field.get(currLoc).remove(type); // removing Type from current location in field
 		if(field.get(loc) == null){ // not sure if necessary but why not
 			field.put(loc, new HashSet<Type>());
 			field.get(loc).add(type);
@@ -72,7 +72,8 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		return field.get(new Location(loc.y, loc.x));
+		HashSet<Type> alpha = field.get(loc);
+		return alpha;
 	}
 
 	public boolean attack(String name) {
@@ -92,7 +93,7 @@ public class Map{
 
  		gameOver = true;
 
-		return false;
+		return gameOver;
 	}
 
 	/* The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns 
@@ -126,8 +127,7 @@ public class Map{
 
 		//if there's no cookie at the specified location, return null
 		} else {
-			JComponent mylabel = new JLabel();
-			return mylabel;
+			return null;
 		}
 		//locations: String, Location
 		//components: String, JComponent

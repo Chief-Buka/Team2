@@ -2,7 +2,6 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
-import org.omg.CosNaming.NamingContextPackage.NotFound;
 
 public class TestAttack extends TestCase {
 

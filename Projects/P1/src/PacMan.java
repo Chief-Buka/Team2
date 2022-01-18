@@ -30,7 +30,7 @@ public class PacMan{
 		}
 
 		/* Down */ 
-		curr = myLoc.shift(0, 1); // sets curr
+		curr = myLoc.shift(0, -1); // sets curr
 		inhabitants = myMap.getLoc(curr); // retrieves Types on Location
 		if(!(inhabitants.contains(Map.Type.WALL))){ // Checks if there's a wall
 			toReturn.add(curr); // Adds to toReturn if no wall
@@ -54,34 +54,34 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		if (this.get_valid_moves().size() < 1) {
-			return true;
-		}
-		else {
-			this.myLoc.x = this.get_valid_moves().get(0).x;
-			this.myLoc.y = this.get_valid_moves().get(0).y;
-			myMap.move(myName, this.get_valid_moves().get(0), Map.Type.PACMAN);
+		ArrayList<Location> to_check = this.get_valid_moves();
+		if(to_check.size() > 0){
+			myLoc = to_check.get(0);
+			if (myMap.move(myName, myLoc, Map.Type.PACMAN)){
+				return true;
+			}
 			return false;
 		}
+		return false;
 	}
 
 	public boolean is_ghost_in_range() { 
 
 		if(myMap.getLoc(new Location(myLoc.x, myLoc.y+1)).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 
 		}else if(myMap.getLoc(new Location(myLoc.x, myLoc.y-1)).contains(Map.Type.GHOST)){
 
-			return false;
+			return true;
 		}else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.GHOST)){
 
-			return false;
+			return true;
 		}else if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y)).contains(Map.Type.GHOST)){
 
-			return false;
+			return true;
 		}
 
-		return true;
+		return false;
 	}
 
 	/*This method checks to see if there is a 'power-cookie' located in Pacman's current  coordinate.
@@ -96,8 +96,7 @@ public class PacMan{
 			return cookie;
 		//if not, return null
 		} else {
-			JComponent myLabel = new JLabel();
-			return myLabel;
+			return null;
 		}
 	}
 }
